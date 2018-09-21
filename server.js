@@ -30,5 +30,7 @@ app.get('/', function(req, res) {
 
 // START THE SERVER
 // ==================================================
-app.listen(4000);
-console.log('App started! Look at http://localhost:4000');
+var server = app.listen(process.env.PORT || 4000, function () {
+    var port = server.address().port;
+    console.log("App now running on port ", port);
+  });
